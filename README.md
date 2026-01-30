@@ -5,6 +5,7 @@ Ce projet reproduit la structure d’un portfolio moderne: Hero, navigation, gri
 ## Prérequis
 - Node.js 18+
 
+
 ## Démarrage
 
 ```bash

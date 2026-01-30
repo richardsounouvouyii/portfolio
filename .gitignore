@@ -1,1 +1,4 @@
 node_modules
+
+# Ignorer les fichiers de build/caches Next.js
+.next/
