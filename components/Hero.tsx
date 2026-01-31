@@ -1,5 +1,6 @@
 "use client";
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { Github, Linkedin, Mail, Instagram, ArrowRight, Download } from 'lucide-react';
 
 export default function Hero() {
@@ -14,10 +15,13 @@ export default function Hero() {
           transition={{ duration: 1.2, type: 'spring', bounce: 0.2 }}
           className="-mt-4 md:-mt-6"
         >
-          <img
-            src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=256&h=256&fit=crop"
-            alt="profile"
-            className="mx-auto h-42 w-42 md:h-40 md:w-40 rounded-full object-cover border-2 border-white/20"
+          <Image
+            src="/assets/logo.jpeg"
+            alt="logo"
+            width={240}
+            height={240}
+            className="mx-auto h-56 w-56 md:h-64 md:w-64 rounded-full object-contain border-2 border-white/20 bg-white"
+            priority
           />
         </motion.div>
 

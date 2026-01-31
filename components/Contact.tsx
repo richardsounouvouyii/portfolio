@@ -1,23 +1,14 @@
 "use client";
+import { useRef } from 'react';
 import { Mail } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 
 export default function Contact() {
   return (
     <section id="contact" className="section-spacing">
       <div className="container-base flex flex-col items-center">
-        <motion.div
-          initial={{ opacity: 0, y: -60 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ amount: 0.3 }}
-          transition={{ duration: 1.2, type: 'spring', bounce: 0.2 }}
-        >
-          <div className="text-sm text-white/70 text-center mb-2">Me contacter</div>
-          <h2 className="text-4xl md:text-6xl font-bold text-center mb-6">Prendre contact avec moi</h2>
-          <p className="text-white/80 max-w-2xl text-center mb-10 text-base md:text-lg">
-            Je pense qu'il serait mémorable de recevoir une correspondance de votre part ! Si vous avez n'importe qu'elle questions, commentaires, ou avis / suggestions, s'il vous plaît, utilisez le formulaire suivant.
-          </p>
-        </motion.div>
+        {/** Use a ref + useInView so animation runs even when already in viewport on load */}
+        <HeaderAnimated />
         <form
           action="https://formspree.io/f/mvzrlzrl"
           method="POST"
@@ -85,5 +76,34 @@ export default function Contact() {
         </motion.footer>
       </div>
     </section>
+  );
+}
+
+function HeaderAnimated() {
+  const ref = useRef(null);
+  const inView = useInView(ref, { amount: 0.3 });
+
+  const variants = {
+    hidden: { opacity: 0, y: -60 },
+    visible: {
+      opacity: 1,
+      y: 0,
+    },
+  };
+
+  return (
+    <motion.div
+      ref={ref}
+      initial="hidden"
+      animate={inView ? 'visible' : 'hidden'}
+      variants={variants}
+      transition={{ duration: 1.2, type: 'spring', bounce: 0.2 }}
+    >
+      <div className="text-sm text-white/70 text-center mb-2">Me contacter</div>
+      <h2 className="text-4xl md:text-6xl font-bold text-center mb-6">Prendre contact avec moi</h2>
+      <p className="text-white/80 max-w-2xl text-center mb-10 text-base md:text-lg">
+        Je pense qu'il serait mémorable de recevoir une correspondance de votre part ! Si vous avez n'importe qu'elle questions, commentaires, ou avis / suggestions, s'il vous plaît, utilisez le formulaire suivant.
+      </p>
+    </motion.div>
   );
 }

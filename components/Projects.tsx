@@ -6,10 +6,10 @@ import { projects } from '../data/site';
 import { motion } from 'framer-motion';
 
 const projectImages = [
-  '/assets/recent.png',
-  '/assets/partie1.png',
-  '/assets/partie2.png',
-  '/assets/service.png',
+  '/assets/Prestataire.png',
+  '/assets/aventure.png',
+  '/assets/enangnon.png',
+  '/assets/momo.png',
 ];
 
 export default function Projects() {
@@ -47,7 +47,7 @@ export default function Projects() {
                 src={projectImages[i % projectImages.length]}
                 alt={p.title}
                 fill
-                className="object-cover w-full h-full group-hover:scale-105 transition duration-300"
+                className="object-contain object-center w-full h-full group-hover:scale-105 transition duration-300 bg-white"
                 sizes="(max-width: 768px) 100vw, 25vw"
                 priority={i === 0}
               />
