@@ -28,8 +28,8 @@ export const projects = [
 export const timeline = [
   {
     title: 'Education',
-    period: '',
-    description: 'Licence 2',
+    period: '03 ans',
+    description: 'Licence 3',
   },
   {
     title: 'Expérience',

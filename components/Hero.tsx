@@ -91,13 +91,13 @@ export default function Hero() {
           transition={{ duration: 1.2, delay: 0.46, type: 'spring', bounce: 0.2 }}
           className="mt-6 flex items-center justify-center gap-3"
         >
-          <a href="https://github.com/richardsounouvou" aria-label="GitHub" className="hover:text-primary">
+          <a href="https://github.com/richardsounouvouyii" aria-label="GitHub" className="hover:text-primary">
             <Github />
           </a>
           <a href="https://www.linkedin.com/in/richard-sounouvou/" aria-label="LinkedIn" className="hover:text-primary">
             <Linkedin />
           </a>
-          <a href="https://www.instagram.com/declan_3.5?igsh=YzljYTk1ODg3Zg==" aria-label="Instagram" className="hover:text-primary">
+          <a href="#" aria-label="Instagram" className="hover:text-primary">
             <Instagram />
           </a>
           <a href="mailto:richardsounouvou19@gmail.com" aria-label="Email" className="hover:text-primary">
